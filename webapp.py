@@ -8,6 +8,8 @@ app = Flask(__name__)
 def render_main():
     return render_template('home.html')
 
+def get_age_options():
+    
 
 
 
