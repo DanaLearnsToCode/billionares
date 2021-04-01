@@ -9,8 +9,8 @@ def render_main():
     return render_template('founders.html', options=get_age_options())
 
 def get_age_options():
-    listOfStates = ["1996", "2001", "2014"]
-    options = ListOfStates
+    listOfAges = ["1996", "2001", "2014"]
+    options = listOfAges
     return options
     
 
