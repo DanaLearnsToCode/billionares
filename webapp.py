@@ -10,7 +10,7 @@ def render_main():
 
 @app.route("/founder")
 def render_founder():
-    return render_template('founders.html', founder_fact = get_founder_facts())
+    return render_template('founders.html', founderFact = get_founder_facts())
     
 
 
