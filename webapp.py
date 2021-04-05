@@ -4,11 +4,12 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/home")
+@app.route("/")
 def render_main():
     return render_template('home.html')
 
 @app.route("/founder")
+def render_founder():
     return render_template('founders.html')
 
 
