@@ -17,7 +17,7 @@ def render_founder():
 def get_founder_facts():
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
-    fouder_pop = 0
+    founder_pop = 0
     year= '1996'
     for founder in billionaires:
         if founder["year"] == year and founder["wealth"]["was founder"]== 'true':
