@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    return render_template('founders.html')
+    return render_template('home.html')
 
 def get_age_options():
     listOfAges = ["1996", "2001", "2014"]
