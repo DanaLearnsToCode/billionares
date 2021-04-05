@@ -4,9 +4,13 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/home")
 def render_main():
     return render_template('home.html')
+
+@app.route("/founder")
+    return render_template('founders.html')
+
 
 def get_age_options():
     listOfAges = ["1996", "2001", "2014"]
