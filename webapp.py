@@ -18,8 +18,9 @@ def get_founder_facts():
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
     fouder_pop = 0
+    year= '1996'
     for founder in billionaires:
-        if founder["year"] == '1996' and founder["wealth"]["was founder"]== 'true':
+        if founder["year"] == year and founder["wealth"]["was founder"]== 'true':
             founder_pop = founder_pop + 1
     fun_fact = "The number of billionares who were also founders in" + year + "was" + str(founder_pop)
     return fun_fact
