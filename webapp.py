@@ -10,7 +10,7 @@ def render_main():
 
 @app.route("/founder")
 def render_founder():
-    if “year” in request.args:
+    if "year" in request.args:
         return render_template('founders.html', founderFact = get_founder_facts())
     else:
         return render_template('founders.html')
