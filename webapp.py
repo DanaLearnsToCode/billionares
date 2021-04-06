@@ -20,7 +20,7 @@ def render_founder():
  #       options = options + Markup("<option value=\"" + year + "\">" + year + "</option>")
 #    return options
     
-    def get_founder_facts():
+def get_founder_facts():
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
     founder_pop = 0
