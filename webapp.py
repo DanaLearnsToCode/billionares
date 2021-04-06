@@ -10,13 +10,13 @@ def render_main():
 
 @app.route("/founder")
 def render_founder():
-    return render_template('founders.html')
+    return render_template('founders.html', founderFact = get_founder_facts())
     
-#, founderFact = get_founder_facts()
+
 def get_year_options():
     ListOfYears= [1996, 2001, 2014]
     options = ""
-    for year in listOfStates:
+    for year in listOfYears:
         options = options + Markup("<option value=\"" + year + "\">" + year + "</option>")
     return options
     
