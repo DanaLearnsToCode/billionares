@@ -45,8 +45,15 @@
       </div>  
     </nav>
   
-  
-  
+  <h1>Find out how many billionares were founders in different years!!!</h1>
+  <form action="/stateFacts">
+    <select name="states">
+     <!-- <option value={{state}}>{{state}}</option> -->
+     {{options}}<!--Markup("<option value=\"" + {{state}} + "\">" + {{state}} + "</option>")-->
+    </select>
+    <br><br>
+    <input type="submit" value="Get a billionaire fact">
+  </form>
   
   <h1>Find out how many billionares were founders in different years!!!</h1>
   <form action="/founderFacts">
