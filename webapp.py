@@ -35,7 +35,7 @@ def get_founder_facts(year):
     fun_fact = "The number of billionares who were also founders in " + year + " was " + str(founder_pop)
     return fun_fact
     
-    
+    True
 
     
 
