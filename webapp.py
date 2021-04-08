@@ -37,7 +37,7 @@ def get_founder_facts(year):
     return fun_fact
     
     
-    def get_founder_facts2(year):
+def get_founder_facts2(year):
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
     
