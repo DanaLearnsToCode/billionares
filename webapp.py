@@ -26,13 +26,21 @@ def render_founder():
 def get_founder_facts(year):
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
+    
     founder_pop = 0
+    founder_pop2 = 0
     
     for founder in billionaires:
-        #founder_pop = founder_pop + 1
         if founder["year"] == int(year) and founder["wealth"]["how"]["was founder"] == True:
             founder_pop = founder_pop + 1
-    fun_fact = "The number of billionares who were also founders in " + year + " was " + str(founder_pop)
+    fun_fact = "The number of billionares who were founders in " + year + " was " + str(founder_pop)
+    
+    for founder in billionaires:
+        
+        if founder["year"] == int(year) and founder["wealth"]["how"]["was founder"] == True and founder["company"]["sector"]== "retail":
+            founder_pop2 = founder_pop2 + 1
+    fun_fact2= "The number of billionares who were founders of a retail store in " + year + " was " + str(founder_pop2)
+    
     return fun_fact
     
     
