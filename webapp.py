@@ -11,7 +11,7 @@ def render_main():
 @app.route("/founder")
 def render_founder():
     if "year" in request.args:
-        return render_template('founders.html', founderFact = get_founder_facts(request.args["year"]))
+        return render_template('founders.html', founderFact = get_founder_facts(request.args["year"]), founderFact2 = get_founder_facts2(request.args["year"]))
     else:
         return render_template('founders.html')
    
@@ -28,12 +28,22 @@ def get_founder_facts(year):
         billionaires = json.load(billionaires_data)
     
     founder_pop = 0
-    founder_pop2 = 0
     
     for founder in billionaires:
         if founder["year"] == int(year) and founder["wealth"]["how"]["was founder"] == True:
             founder_pop = founder_pop + 1
     fun_fact = "The number of billionares who were founders in " + year + " was " + str(founder_pop)
+     
+    return fun_fact
+    
+    
+    def get_founder_facts2(year):
+    with open('billionaires.json') as billionaires_data:
+        billionaires = json.load(billionaires_data)
+    
+   
+    founder_pop2 = 0
+    
     
     for founder in billionaires:
         
@@ -41,9 +51,7 @@ def get_founder_facts(year):
             founder_pop2 = founder_pop2 + 1
     fun_fact2= "The number of billionares who were founders of a retail company in " + year + " was " + str(founder_pop2)
     
-    return fun_fact
     return fun_fact2
-    
     
 
     
