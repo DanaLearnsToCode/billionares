@@ -39,9 +39,10 @@ def get_founder_facts(year):
         
         if founder["year"] == int(year) and founder["wealth"]["how"]["was founder"] == True and founder["company"]["sector"]== "retail":
             founder_pop2 = founder_pop2 + 1
-    fun_fact2= "The number of billionares who were founders of a retail store in " + year + " was " + str(founder_pop2)
+    fun_fact2= "The number of billionares who were founders of a retail company in " + year + " was " + str(founder_pop2)
     
     return fun_fact
+    return fun_fact2
     
     
 
