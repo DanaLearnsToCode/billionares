@@ -52,7 +52,36 @@ def get_founder_facts2(year):
     fun_fact2= "The number of billionares who were founders of a retail company in " + year + " was " + str(founder_pop2)
     
     return fun_fact2
+
+def get_age_facts(year):
+    with open('billionaires.json') as billionaires_data:
+        billionaires = json.load(billionaires_data)
     
+   
+    earlyUnder50_pop = 0
+    earlyOver50_pop = 0
+    
+    for founder in billionaires:
+        
+        if founder["year"] == 1996 and founder["demographics"]["age"] < 51:
+            earlyUnder50_pop = earlyUnder50_pop + 1
+        
+        if founder["year"] == 1996 and founder["demographics"]["age"] > 50:
+            earlyOver50_pop = earlyOver50_pop + 1
+        
+    age_fact= "The number of billionares over 50 is"+earlyOver50_pop+"The number of billionaires 50 and under is"+earlyUnder50_pop
+    
+     print(age_fact)
+    
+
+       #early_under50 = 0
+       #early_over50 = 0
+       #middle_under50 = 0
+       #middle_over50 = 0
+       #late_under50 = 0
+       #late_over50 = 0
+        
+      
 
     
 
