@@ -14,6 +14,9 @@ def render_founder():
         return render_template('founders.html', founderFact = get_founder_facts(request.args["year"]), founderFact2 = get_founder_facts2(request.args["year"]))
     else:
         return render_template('founders.html', ageFact = get_age_facts())
+    
+@app.route("/graph")
+    return render_template('graph.html')
    
 
 #def get_year_options():
