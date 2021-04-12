@@ -16,6 +16,7 @@ def render_founder():
         return render_template('founders.html', ageFact = get_age_facts())
     
 @app.route("/graph")
+def render_graph():
     return render_template('graph.html')
    
 
