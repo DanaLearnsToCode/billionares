@@ -64,7 +64,10 @@ def get_age_facts():
    
     earlyUnder50_pop = 0
     earlyOver50_pop = 0
-    
+    middleUnder50_pop = 0
+    middleOver50_pop = 0
+    lateUnder50_pop = 0
+    lateOver50_pop = 0
     for founder in billionaires:
         
         if founder["year"] == 1996 and founder["demographics"]["age"] < 51:
@@ -73,7 +76,18 @@ def get_age_facts():
         if founder["year"] == 1996 and founder["demographics"]["age"] > 50:
             earlyOver50_pop = earlyOver50_pop + 1
         
-    age_fact= "The number of billionares over 50 is"+str(earlyOver50_pop)+"The number of billionaires 50 and under is"+str(earlyUnder50_pop)
+        if founder["year"] == 2001 and founder["demographics"]["age"] < 51:
+            middleUnder50_pop = middleUnder50_pop + 1
+         
+        if founder["year"] == 2001 and founder["demographics"]["age"] > 50:
+            middleOver50_pop = middleOver50_pop + 1    
+        
+        if founder["year"] == 2014 and founder["demographics"]["age"] < 51:
+            lateUnder50_pop = 0 = lateUnder50_pop = 0 + 1   
+            
+        if founder["year"] == 2014 and founder["demographics"]["age"] > 50:
+            lateOver50_pop = lateOver50_pop + 1       
+    age_fact= "early over 50 is"+str(earlyOver50_pop)+" early 50 and under is "+str(earlyUnder50_pop) + " middle 50 and under is "+str(middleUnder50_pop)+"middle 50 over is"+str(middleOver50_pop)
     
     return age_fact
 
