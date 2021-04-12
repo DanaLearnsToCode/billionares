@@ -13,7 +13,7 @@ def render_founder():
     if "year" in request.args:
         return render_template('founders.html', founderFact = get_founder_facts(request.args["year"]), founderFact2 = get_founder_facts2(request.args["year"]))
     else:
-        return render_template('founders.html')
+        return render_template('founders.html', ageFact = get_age_facts())
    
 
 #def get_year_options():
@@ -53,7 +53,7 @@ def get_founder_facts2(year):
     
     return fun_fact2
 
-def get_age_facts(year):
+def get_age_facts():
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
     
@@ -70,9 +70,10 @@ def get_age_facts(year):
             earlyOver50_pop = earlyOver50_pop + 1
         
     age_fact= "The number of billionares over 50 is"+earlyOver50_pop+"The number of billionaires 50 and under is"+earlyUnder50_pop
+    
     return age_fact
 
-print(age_fact)
+
     
 
        #early_under50 = 0
