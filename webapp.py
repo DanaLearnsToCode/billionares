@@ -87,7 +87,7 @@ def get_age_facts():
             
         if founder["year"] == 2014 and founder["demographics"]["age"] > 50:
             lateOver50_pop = lateOver50_pop + 1       
-    age_fact= "early over 50 is"+str(earlyOver50_pop)+" early 50 and under is "+str(earlyUnder50_pop) + " middle 50 and under is "+str(middleUnder50_pop)+"middle 50 over is"+str(middleOver50_pop)
+    age_fact= "early over 50 is"+str(earlyOver50_pop)+" early 50 and under is "+str(earlyUnder50_pop) + " middle 50 and under is "+str(middleUnder50_pop)+"middle 50 over is"+str(middleOver50_pop)+"late under 50"+str(lateUnder50_pop)+"late over 50"+str(lateOver50_pop)
     
     return age_fact
 
