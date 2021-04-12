@@ -83,7 +83,7 @@ def get_age_facts():
             middleOver50_pop = middleOver50_pop + 1    
         
         if founder["year"] == 2014 and founder["demographics"]["age"] < 51:
-            lateUnder50_pop = 0 = lateUnder50_pop = 0 + 1   
+            lateUnder50_pop = lateUnder50_pop + 1   
             
         if founder["year"] == 2014 and founder["demographics"]["age"] > 50:
             lateOver50_pop = lateOver50_pop + 1       
