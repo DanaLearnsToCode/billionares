@@ -70,8 +70,9 @@ def get_age_facts(year):
             earlyOver50_pop = earlyOver50_pop + 1
         
     age_fact= "The number of billionares over 50 is"+earlyOver50_pop+"The number of billionaires 50 and under is"+earlyUnder50_pop
-    
-     print(age_fact)
+    return age_fact
+
+print(age_fact)
     
 
        #early_under50 = 0
