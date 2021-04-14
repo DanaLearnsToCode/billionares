@@ -18,6 +18,10 @@ def render_founder():
 @app.route("/graph")
 def render_graph():
     return render_template('graph.html')
+
+@app.route("/country")
+def render_country():
+    return render_template('country.html')
    
 
 #def get_year_options():
