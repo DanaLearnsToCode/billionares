@@ -62,9 +62,6 @@ def get_founder_facts2(year):
     
     return fun_fact2
 
-def get_age_facts():
-    with open('billionaires.json') as billionaires_data:
-        billionaires = json.load(billionaires_data)
         
 def get_country_options():
     listOfCountry = []
@@ -88,7 +85,12 @@ def get_country_fact(country):
     fun_fact = "The # of billionaires from " + country + "throughout 1996, 2001, and 2014 was " + str(country_pop)
     return fun_fact
     
-   
+
+def get_age_facts():
+    with open('billionaires.json') as billionaires_data:
+        billionaires = json.load(billionaires_data)   
+    
+    
     earlyUnder50_pop = 0
     earlyOver50_pop = 0
     middleUnder50_pop = 0
