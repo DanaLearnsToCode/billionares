@@ -21,7 +21,8 @@ def render_graph():
 
 @app.route("/country")
 def render_country():
-    return render_template('country.html', options = get_country_options())
+    state_chosen = request.args['countries']
+    return render_template('country.html', options = get_country_options(), stateFact=get_fact(state_chosen))
    
 
 #def get_year_options():
@@ -76,6 +77,16 @@ def get_country_options():
     for country in listOfCountry:
         options = options + Markup("<option value=\"" + country + "\">" + country + "</option>")
     return options
+
+def get_country_fact(country):
+    with open('billionaires.json') as billionaires_data:
+        billionaires = json.load(billionaires_data)
+    country_pop = 0
+    for country in billionaires:
+        if country["location"]["citizenship"] == country:
+            country_pop = country_pop + country_pop + 1
+    fun_fact = "The # of billionaires from " + country + "throughout 1996, 2001, and 2014 was " + str(country_pop)
+    return fun_fact
     
    
     earlyUnder50_pop = 0
