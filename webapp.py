@@ -77,7 +77,7 @@ def get_country_fact(country):
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
     country_pop = 0
-    for country in billionaires:
+    for countries in billionaires:
         if country["location"]["citizenship"] == country:
             country_pop = country_pop + 1
     countries_fact = "The # of billionaires from " + country + "throughout 1996, 2001, and 2014 was " + str(country_pop)
