@@ -22,7 +22,7 @@ def render_graph():
 @app.route("/country")
 def render_country():
     country_chosen = request.args['countries']
-    return render_template('country.html', options = get_country_options(), countryFact=get_fact(country_chosen))
+    return render_template('country.html', options = get_country_options(), countryFact=get_country_fact(country_chosen))
    
 
 #def get_year_options():
