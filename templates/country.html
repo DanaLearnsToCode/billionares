@@ -50,6 +50,16 @@
       </div>  
     </nav>
   
+  <h1>Choose a state!!!</h1>
+   <form action="/stateFacts">
+    <select name="states">
+     <!-- <option value={{state}}>{{state}}</option> -->
+     {{options}}<!--Markup("<option value=\"" + {{state}} + "\">" + {{state}} + "</option>")-->
+    </select>
+    <br><br>
+    <input type="submit" value="Get a fun fact">
+  </form>
+   <!--<p>{{stateFact}}</p>-->
   
   
   
