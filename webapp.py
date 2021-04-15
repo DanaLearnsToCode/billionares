@@ -21,7 +21,7 @@ def render_graph():
 
 @app.route("/country")
 def render_country():
-    return render_template('country.html')
+    return render_template('country.html', options = get_country_options())
    
 
 #def get_year_options():
@@ -64,6 +64,18 @@ def get_founder_facts2(year):
 def get_age_facts():
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
+        
+def get_country_options():
+    listOfCountry = []
+    with open('billionaires.json') as billionaires_data:
+        billionaires = json.load(billionaires_data)
+    for country in billionaires:
+        if country["location"]["citizenship"] not in listOfCountry:
+            listOfCountry.append(country["location"]["citizenship"])
+    options = ""
+    for country in listOfCountry:
+        options = options + Markup("<option value=\"" + country + "\">" + country + "</option>")
+    return options
     
    
     earlyUnder50_pop = 0
