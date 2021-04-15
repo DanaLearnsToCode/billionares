@@ -21,17 +21,13 @@ def render_graph():
 
 @app.route("/country")
 def render_country():
-    country_chosen = request.args['countries']
-    return render_template('country.html', options = get_country_options(), countryFact=get_country_fact(country_chosen))
+    if "country" in request.args:
+        return render_template('country.html', options = get_country_options(), countryFact=get_country_fact())
+    else:
+        return render_template('country.html', options = get_country_options())
    
 
-#def get_year_options():
-#    ListOfYears= [1996, 2001, 2014]
-#    options = ""
-#    for year in listOfYears:
- #       options = options + Markup("<option value=\"" + year + "\">" + year + "</option>")
-#    return options
-    
+
 def get_founder_facts(year):
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
@@ -75,17 +71,22 @@ def get_country_options():
         options = options + Markup("<option value=\"" + country + "\">" + country + "</option>")
     return options
 
+
+
 def get_country_fact(country):
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)
     country_pop = 0
     for country in billionaires:
         if country["location"]["citizenship"] == country:
-            country_pop = country_pop + country_pop + 1
-    fun_fact = "The # of billionaires from " + country + "throughout 1996, 2001, and 2014 was " + str(country_pop)
-    return fun_fact
+            country_pop = country_pop + 1
+    countries_fact = "The # of billionaires from " + country + "throughout 1996, 2001, and 2014 was " + str(country_pop)
+    return countries_fact
     
 
+
+    
+    
 def get_age_facts():
     with open('billionaires.json') as billionaires_data:
         billionaires = json.load(billionaires_data)   
@@ -123,19 +124,10 @@ def get_age_facts():
 
     
 
-       #early_under50 = 0
-       #early_over50 = 0
-       #middle_under50 = 0
-       #middle_over50 = 0
-       #late_under50 = 0
-       #late_over50 = 0
         
       
 
-    
-
-
-
+ 
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
