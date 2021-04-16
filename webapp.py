@@ -114,7 +114,7 @@ def get_country_fact2(chosenCountry2):
         if country["location"]["citizenship"] == chosenCountry2:
             country_pop2 = country_pop2 + 1
             country_age2 = country_age2 + country["demographics"]["age"]
-            totalcountry_age= county_age2 // county_pop2
+            totalcountry_age= country_age2 // country_pop2
     countries_fact2 = "The average age of billionaires from " + chosenCountry2 + " throughout 1996, 2001, and 2014 was " + str(totalcountry_age)+ " years old"
     return countries_fact2
 
