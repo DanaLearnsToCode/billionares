@@ -109,7 +109,7 @@ def get_country_fact2(chosenCountry2):
         billionaires = json.load(billionaires_data)
     country_pop2 = 0
     country_age2=0
-    totalcountry_age
+    totalcountry_age=0
     for country in billionaires:
         if country["location"]["citizenship"] == chosenCountry2:
             country_pop2 = country_pop2 + 1
