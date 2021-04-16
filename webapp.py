@@ -72,6 +72,19 @@ def get_country_options():
     return options
 
 
+def get_country_options2():
+    listOfCountry2 = []
+    with open('billionaires.json') as billionaires_data:
+        billionaires = json.load(billionaires_data)
+    for country in billionaires:
+        if country["location"]["citizenship"] not in listOfCountry2:
+            listOfCountry2.append(country["location"]["citizenship"])
+    options2 = ""
+    for country in listOfCountry2:
+        options2 = options2 + Markup("<option value=\"" + country + "\">" + country + "</option>")
+    return options2
+
+
 
 def get_country_fact(chosenCountry):
     with open('billionaires.json') as billionaires_data:
@@ -82,6 +95,9 @@ def get_country_fact(chosenCountry):
             country_pop = country_pop + 1
     countries_fact = "The # of billionaires from " + chosenCountry + " throughout 1996, 2001, and 2014 was " + str(country_pop)
     return countries_fact
+
+
+
     
 
 
