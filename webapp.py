@@ -25,6 +25,13 @@ def render_country():
         return render_template('country.html', options = get_country_options(), countryFact=get_country_fact(request.args["country"]))
     else:
         return render_template('country.html', options = get_country_options())
+    
+@app.route("/page4")
+def render_page4():
+    if "country" in request.args:
+        return render_template('page4.html', options2 = get_country_options2(), countryFact2=get_country_fact2(request.args["country"]))
+    else:
+        return render_template('page4.html', options2 = get_country_options2())
    
 
 
